@@ -6,6 +6,7 @@ import time
 from datetime import datetime
 import re
 from dataclasses import dataclass
+from email import message 
 
 from .logger import logger
 
@@ -90,7 +91,7 @@ def _wait_email_code(imap: imaplib.IMAP4, count: int, min_t: datetime | None) ->
     return None
 
 
-def _extract_username(msg: emaillib.Message) -> str | None:
+def _extract_username(msg: message.Message) -> str | None:
     body = ""
     if msg.is_multipart():
         for part in msg.walk():

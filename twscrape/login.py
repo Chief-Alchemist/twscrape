@@ -175,21 +175,26 @@ async def login_confirm_email(ctx: TaskCtx) -> Response:
 async def login_confirm_email_code(ctx: TaskCtx):
     if ctx.cfg.manual:
         print(f"Enter email code for {ctx.acc.username} / {ctx.acc.email}")
-        value = input("Code: ")
-        value = value.strip()
+        code = input("Code: ")
+        code = code.strip()
     else:
         if not ctx.imap:
             ctx.imap = await imap_login(ctx.acc.email, ctx.acc.email_password)
 
         now_time = utc.now() - timedelta(seconds=30)
-        value = await imap_get_email_code(ctx.imap, ctx.acc.email, now_time)
+        code_res = await imap_get_email_code(ctx.imap, ctx.acc.email, now_time)
+        
+        if code_res.code is None:
+            raise ValueError("Email code not found")
+        
+        code = code_res.code
 
     payload = {
         "flow_token": ctx.prev["flow_token"],
         "subtask_inputs": [
             {
                 "subtask_id": "LoginAcid",
-                "enter_text": {"text": value, "link": "next_link"},
+                "enter_text": {"text": code, "link": "next_link"},
             }
         ],
     }

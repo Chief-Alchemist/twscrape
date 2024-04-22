@@ -33,16 +33,19 @@ def guess_delim(line: str):
 
 
 class AccountsPool:
-    # _order_by: str = "RANDOM()"
-    _order_by: str = "username"
-
     def __init__(
         self,
         db_file="accounts.db",
+        order_by: str = "username",
         login_config: LoginConfig | None = None,
         raise_when_no_account=False,
     ):
+        if not db_file.endswith(".db"):
+            raise ValueError("Invalid db file")
         self._db_file = db_file
+        if order_by not in ["username", "last_used"]:
+            raise ValueError(f"Invalid order_by: {order_by}")
+        self._order_by = order_by
         self._login_config = login_config or LoginConfig()
         self._raise_when_no_account = raise_when_no_account
 

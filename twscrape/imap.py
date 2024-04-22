@@ -74,9 +74,14 @@ def _wait_email_code(imap: imaplib.IMAP4, username: str, count: int, min_t: date
 
                 msg_from = str(msg.get("From", "")).lower()
                 msg_subj = str(msg.get("Subject", "")).lower()
-                logger.info(f"({i} of {count}) {msg_from} - {msg_time} - {msg_subj}")
+
+                if "info@x.com" not in msg_from and "confirmation code is" not in msg_subj:
+                    continue
+
+                logger.debug(f"Email {i}/{count} from {msg_from} at {msg_time}: {msg_subj}")
 
                 if min_t is not None and msg_time < min_t:
+                    logger.debug(f"Email too old, skipping")
                     return None
 
                 if "info@x.com" in msg_from and "confirmation code is" in msg_subj:
@@ -97,7 +102,6 @@ def _wait_email_code(imap: imaplib.IMAP4, username: str, count: int, min_t: date
                     return EmailCodeResult(code, extracted_username)
 
     return None
-
 
 def _extract_username(msg: message.Message) -> str | None:
     body = ""

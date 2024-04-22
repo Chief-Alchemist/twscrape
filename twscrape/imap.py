@@ -61,7 +61,7 @@ def _get_imap_domain(email: str) -> str:
     return f"imap.{email_domain}"
 
 
-def _wait_email_code(imap: imaplib.IMAP4, count: int, min_t: datetime | None) -> EmailCodeResult | None:
+def _wait_email_code(imap: imaplib.IMAP4, username: str, count: int, min_t: datetime | None) -> EmailCodeResult | None:
     for i in range(count, 0, -1):
         _, rep = imap.fetch(str(i), "(RFC822)")
         for x in rep:
@@ -81,12 +81,20 @@ def _wait_email_code(imap: imaplib.IMAP4, count: int, min_t: datetime | None) ->
 
                 if "info@x.com" in msg_from and "confirmation code is" in msg_subj:
                     # eg. Your X confirmation code is XXX
-                    username = _extract_username(msg)
+                    extracted_username = _extract_username(msg)
+                    if extracted_username is None:
+                        logger.debug(f"Username not found in email")
+                        continue
+
+                    if extracted_username != username:
+                        logger.debug(f"Email username {extracted_username} does not match {username}, moving on to next email")
+                        continue
+
                     code = msg_subj.split(" ")[-1].strip()
 
-                    logger.debug(f"Email code found: {code}")
+                    logger.debug(f"Email code found for {username}: {code}")
 
-                    return EmailCodeResult(code, username)
+                    return EmailCodeResult(code, extracted_username)
 
     return None
 
@@ -120,7 +128,7 @@ def _extract_username(msg: message.Message) -> str | None:
 
 
 async def imap_get_email_code(
-    imap: imaplib.IMAP4, email: str, min_t: datetime | None = None
+    imap: imaplib.IMAP4, username: str, email: str, min_t: datetime | None = None
 ) -> EmailCodeResult:
     try:
         logger.info(f"Waiting for confirmation code for {email}...")
@@ -128,7 +136,7 @@ async def imap_get_email_code(
         while True:
             _, rep = imap.select("INBOX")
             msg_count = int(rep[0].decode("utf-8")) if len(rep) > 0 and rep[0] is not None else 0
-            code_result = _wait_email_code(imap, msg_count, min_t)
+            code_result = _wait_email_code(imap, username, msg_count, min_t)
             if code_result is not None:
                 return code_result
 

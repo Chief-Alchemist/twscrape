@@ -106,6 +106,7 @@ class QueueClient:
         if acc is None:
             return None
 
+        logger.debug(f"Account {acc.username} acquired for use")
         clt = acc.make_client(proxy=self.proxy)
         self.ctx = Ctx(acc, clt)
         return self.ctx

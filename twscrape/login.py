@@ -182,7 +182,7 @@ async def login_confirm_email_code(ctx: TaskCtx):
             ctx.imap = await imap_login(ctx.acc.email, ctx.acc.email_password)
 
         now_time = utc.now() - timedelta(seconds=30)
-        code_res = await imap_get_email_code(ctx.imap, ctx.acc.email, now_time)
+        code_res = await imap_get_email_code(ctx.imap, ctx.acc.username, ctx.acc.email, now_time)
         
         if code_res.code is None:
             raise ValueError("Email code not found")

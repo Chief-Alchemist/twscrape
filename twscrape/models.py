@@ -485,10 +485,7 @@ def _parse_card(obj: dict, url: str):
             video=video,
         )
     
-    # "name": "3691233323:audiospace",
-    # "url": "https://t.co/0WJACgCEp9",
-    # "user_refs_results": []
-    if name == "audiospace":
+    if re.match(r"\d+:audiospace", name):
         val = _parse_card_prepare_values(obj)
         url = _parse_card_get_str(val, "url")
         return AudioSpaceCard(url=url)

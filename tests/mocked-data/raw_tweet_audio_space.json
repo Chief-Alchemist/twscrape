@@ -1,0 +1,893 @@
+{
+    "data": {
+        "threaded_conversation_with_injections_v2": {
+            "instructions": [
+                {
+                    "type": "TimelineAddEntries",
+                    "entries": [
+                        {
+                            "entryId": "tweet-1783355050984866206",
+                            "sortIndex": "7440016985869909601",
+                            "content": {
+                                "entryType": "TimelineTimelineItem",
+                                "__typename": "TimelineTimelineItem",
+                                "itemContent": {
+                                    "itemType": "TimelineTweet",
+                                    "__typename": "TimelineTweet",
+                                    "tweet_results": {
+                                        "result": {
+                                            "__typename": "Tweet",
+                                            "rest_id": "1783355050984866206",
+                                            "has_birdwatch_notes": false,
+                                            "core": {
+                                                "user_results": {
+                                                    "result": {
+                                                        "__typename": "User",
+                                                        "id": "VXNlcjoxNDkxNTI2NDI1NTgwNDc0MzY4",
+                                                        "rest_id": "1491526425580474368",
+                                                        "affiliates_highlighted_label": {},
+                                                        "has_graduated_access": true,
+                                                        "is_blue_verified": true,
+                                                        "profile_image_shape": "Circle",
+                                                        "legacy": {
+                                                            "can_dm": true,
+                                                            "can_media_tag": true,
+                                                            "created_at": "Wed Feb 09 21:36:49 +0000 2022",
+                                                            "default_profile": true,
+                                                            "default_profile_image": false,
+                                                            "description": "Aptos is the layer 1 blockchain engineered to evolve.⁣\nMake Your Move on Aptos \uD83C\uDF10 Twitter by Aptos Foundation.",
+                                                            "entities": {
+                                                                "description": {
+                                                                    "urls": []
+                                                                },
+                                                                "url": {
+                                                                    "urls": [
+                                                                        {
+                                                                            "display_url": "aptosfoundation.org",
+                                                                            "expanded_url": "https://aptosfoundation.org/",
+                                                                            "url": "https://t.co/rmwJXBMf7x",
+                                                                            "indices": [
+                                                                                0,
+                                                                                23
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            },
+                                                            "fast_followers_count": 0,
+                                                            "favourites_count": 9223,
+                                                            "followers_count": 586493,
+                                                            "friends_count": 277,
+                                                            "has_custom_timelines": true,
+                                                            "is_translator": false,
+                                                            "listed_count": 3095,
+                                                            "location": "",
+                                                            "media_count": 434,
+                                                            "name": "Aptos",
+                                                            "normal_followers_count": 586493,
+                                                            "pinned_tweet_ids_str": [
+                                                                "1772734945942819005"
+                                                            ],
+                                                            "possibly_sensitive": false,
+                                                            "profile_banner_url": "https://pbs.twimg.com/profile_banners/1491526425580474368/1709147351",
+                                                            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1556801889282686976/tuHF27-8_normal.jpg",
+                                                            "profile_interstitial_type": "",
+                                                            "screen_name": "Aptos",
+                                                            "statuses_count": 5882,
+                                                            "translator_type": "none",
+                                                            "url": "https://t.co/rmwJXBMf7x",
+                                                            "verified": false,
+                                                            "want_retweets": false,
+                                                            "withheld_in_countries": []
+                                                        },
+                                                        "professional": {
+                                                            "rest_id": "1653918001203412992",
+                                                            "professional_type": "Business",
+                                                            "category": [
+                                                                {
+                                                                    "id": 713,
+                                                                    "name": "Science & Technology",
+                                                                    "icon_name": "IconBriefcaseStroke"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "tipjar_settings": {}
+                                                    }
+                                                }
+                                            },
+                                            "card": {
+                                                "rest_id": "https://t.co/0WJACgCEp9",
+                                                "legacy": {
+                                                    "binding_values": [
+                                                        {
+                                                            "key": "narrow_cast_space_type",
+                                                            "value": {
+                                                                "string_value": "0",
+                                                                "type": "STRING"
+                                                            }
+                                                        },
+                                                        {
+                                                            "key": "id",
+                                                            "value": {
+                                                                "string_value": "1PlJQDXpeRkGE",
+                                                                "type": "STRING"
+                                                            }
+                                                        },
+                                                        {
+                                                            "key": "card_url",
+                                                            "value": {
+                                                                "scribe_key": "card_url",
+                                                                "string_value": "https://t.co/0WJACgCEp9",
+                                                                "type": "STRING"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "card_platform": {
+                                                        "platform": {
+                                                            "audience": {
+                                                                "name": "production"
+                                                            },
+                                                            "device": {
+                                                                "name": "Swift",
+                                                                "version": "12"
+                                                            }
+                                                        }
+                                                    },
+                                                    "name": "3691233323:audiospace",
+                                                    "url": "https://t.co/0WJACgCEp9",
+                                                    "user_refs_results": []
+                                                }
+                                            },
+                                            "unmention_data": {},
+                                            "edit_control": {
+                                                "edit_tweet_ids": [
+                                                    "1783355050984866206"
+                                                ],
+                                                "editable_until_msecs": "1714023551946",
+                                                "is_edit_eligible": false,
+                                                "edits_remaining": "5"
+                                            },
+                                            "is_translatable": false,
+                                            "views": {
+                                                "state": "Enabled"
+                                            },
+                                            "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+                                            "legacy": {
+                                                "bookmark_count": 0,
+                                                "bookmarked": false,
+                                                "created_at": "Thu Apr 25 04:39:11 +0000 2024",
+                                                "conversation_id_str": "1783355050984866206",
+                                                "display_text_range": [
+                                                    0,
+                                                    104
+                                                ],
+                                                "entities": {
+                                                    "hashtags": [],
+                                                    "symbols": [],
+                                                    "timestamps": [],
+                                                    "urls": [
+                                                        {
+                                                            "display_url": "twitter.com/i/spaces/1PlJQ…",
+                                                            "expanded_url": "https://twitter.com/i/spaces/1PlJQDXpeRkGE/",
+                                                            "url": "https://t.co/0WJACgCEp9",
+                                                            "indices": [
+                                                                81,
+                                                                104
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "user_mentions": [
+                                                        {
+                                                            "id_str": "1491526425580474368",
+                                                            "name": "Aptos",
+                                                            "screen_name": "Aptos",
+                                                            "indices": [
+                                                                3,
+                                                                9
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                "favorite_count": 0,
+                                                "favorited": false,
+                                                "full_text": "RT @Aptos: ICYMI, this is one Aptos ecosystem deep dive you don't want to miss.\n\nhttps://t.co/0WJACgCEp9",
+                                                "is_quote_status": true,
+                                                "lang": "en",
+                                                "possibly_sensitive": false,
+                                                "possibly_sensitive_editable": true,
+                                                "quote_count": 0,
+                                                "quoted_status_id_str": "1781870855464841312",
+                                                "quoted_status_permalink": {
+                                                    "url": "https://t.co/Zsrw49epXg",
+                                                    "expanded": "https://twitter.com/Aptos/status/1781870855464841312",
+                                                    "display": "x.com/Aptos/status/1…"
+                                                },
+                                                "reply_count": 0,
+                                                "retweet_count": 13,
+                                                "retweeted": false,
+                                                "user_id_str": "1491526425580474368",
+                                                "id_str": "1783355050984866206",
+                                                "retweeted_status_result": {
+                                                    "result": {
+                                                        "__typename": "Tweet",
+                                                        "rest_id": "1782557053753626876",
+                                                        "has_birdwatch_notes": false,
+                                                        "core": {
+                                                            "user_results": {
+                                                                "result": {
+                                                                    "__typename": "User",
+                                                                    "id": "VXNlcjoxNDkxNTI2NDI1NTgwNDc0MzY4",
+                                                                    "rest_id": "1491526425580474368",
+                                                                    "affiliates_highlighted_label": {},
+                                                                    "has_graduated_access": true,
+                                                                    "is_blue_verified": true,
+                                                                    "profile_image_shape": "Circle",
+                                                                    "legacy": {
+                                                                        "can_dm": true,
+                                                                        "can_media_tag": true,
+                                                                        "created_at": "Wed Feb 09 21:36:49 +0000 2022",
+                                                                        "default_profile": true,
+                                                                        "default_profile_image": false,
+                                                                        "description": "Aptos is the layer 1 blockchain engineered to evolve.⁣\nMake Your Move on Aptos \uD83C\uDF10 Twitter by Aptos Foundation.",
+                                                                        "entities": {
+                                                                            "description": {
+                                                                                "urls": []
+                                                                            },
+                                                                            "url": {
+                                                                                "urls": [
+                                                                                    {
+                                                                                        "display_url": "aptosfoundation.org",
+                                                                                        "expanded_url": "https://aptosfoundation.org/",
+                                                                                        "url": "https://t.co/rmwJXBMf7x",
+                                                                                        "indices": [
+                                                                                            0,
+                                                                                            23
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        },
+                                                                        "fast_followers_count": 0,
+                                                                        "favourites_count": 9223,
+                                                                        "followers_count": 586493,
+                                                                        "friends_count": 277,
+                                                                        "has_custom_timelines": true,
+                                                                        "is_translator": false,
+                                                                        "listed_count": 3095,
+                                                                        "location": "",
+                                                                        "media_count": 434,
+                                                                        "name": "Aptos",
+                                                                        "normal_followers_count": 586493,
+                                                                        "pinned_tweet_ids_str": [
+                                                                            "1772734945942819005"
+                                                                        ],
+                                                                        "possibly_sensitive": false,
+                                                                        "profile_banner_url": "https://pbs.twimg.com/profile_banners/1491526425580474368/1709147351",
+                                                                        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1556801889282686976/tuHF27-8_normal.jpg",
+                                                                        "profile_interstitial_type": "",
+                                                                        "screen_name": "Aptos",
+                                                                        "statuses_count": 5882,
+                                                                        "translator_type": "none",
+                                                                        "url": "https://t.co/rmwJXBMf7x",
+                                                                        "verified": false,
+                                                                        "want_retweets": false,
+                                                                        "withheld_in_countries": []
+                                                                    },
+                                                                    "professional": {
+                                                                        "rest_id": "1653918001203412992",
+                                                                        "professional_type": "Business",
+                                                                        "category": [
+                                                                            {
+                                                                                "id": 713,
+                                                                                "name": "Science & Technology",
+                                                                                "icon_name": "IconBriefcaseStroke"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "tipjar_settings": {}
+                                                                }
+                                                            }
+                                                        },
+                                                        "card": {
+                                                            "rest_id": "https://t.co/0WJACgCEp9",
+                                                            "legacy": {
+                                                                "binding_values": [
+                                                                    {
+                                                                        "key": "narrow_cast_space_type",
+                                                                        "value": {
+                                                                            "string_value": "0",
+                                                                            "type": "STRING"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "key": "id",
+                                                                        "value": {
+                                                                            "string_value": "1PlJQDXpeRkGE",
+                                                                            "type": "STRING"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "key": "card_url",
+                                                                        "value": {
+                                                                            "scribe_key": "card_url",
+                                                                            "string_value": "https://t.co/0WJACgCEp9",
+                                                                            "type": "STRING"
+                                                                        }
+                                                                    }
+                                                                ],
+                                                                "card_platform": {
+                                                                    "platform": {
+                                                                        "audience": {
+                                                                            "name": "production"
+                                                                        },
+                                                                        "device": {
+                                                                            "name": "Swift",
+                                                                            "version": "12"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "name": "3691233323:audiospace",
+                                                                "url": "https://t.co/0WJACgCEp9",
+                                                                "user_refs_results": []
+                                                            }
+                                                        },
+                                                        "unmention_data": {},
+                                                        "edit_control": {
+                                                            "edit_tweet_ids": [
+                                                                "1782557053753626876"
+                                                            ],
+                                                            "editable_until_msecs": "1713833294000",
+                                                            "is_edit_eligible": true,
+                                                            "edits_remaining": "5"
+                                                        },
+                                                        "is_translatable": false,
+                                                        "views": {
+                                                            "count": "26788",
+                                                            "state": "EnabledWithCount"
+                                                        },
+                                                        "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+                                                        "quoted_status_result": {
+                                                            "result": {
+                                                                "__typename": "Tweet",
+                                                                "rest_id": "1781870855464841312",
+                                                                "has_birdwatch_notes": false,
+                                                                "core": {
+                                                                    "user_results": {
+                                                                        "result": {
+                                                                            "__typename": "User",
+                                                                            "id": "VXNlcjoxNDkxNTI2NDI1NTgwNDc0MzY4",
+                                                                            "rest_id": "1491526425580474368",
+                                                                            "affiliates_highlighted_label": {},
+                                                                            "has_graduated_access": true,
+                                                                            "is_blue_verified": true,
+                                                                            "profile_image_shape": "Circle",
+                                                                            "legacy": {
+                                                                                "can_dm": true,
+                                                                                "can_media_tag": true,
+                                                                                "created_at": "Wed Feb 09 21:36:49 +0000 2022",
+                                                                                "default_profile": true,
+                                                                                "default_profile_image": false,
+                                                                                "description": "Aptos is the layer 1 blockchain engineered to evolve.⁣\nMake Your Move on Aptos \uD83C\uDF10 Twitter by Aptos Foundation.",
+                                                                                "entities": {
+                                                                                    "description": {
+                                                                                        "urls": []
+                                                                                    },
+                                                                                    "url": {
+                                                                                        "urls": [
+                                                                                            {
+                                                                                                "display_url": "aptosfoundation.org",
+                                                                                                "expanded_url": "https://aptosfoundation.org/",
+                                                                                                "url": "https://t.co/rmwJXBMf7x",
+                                                                                                "indices": [
+                                                                                                    0,
+                                                                                                    23
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                },
+                                                                                "fast_followers_count": 0,
+                                                                                "favourites_count": 9223,
+                                                                                "followers_count": 586493,
+                                                                                "friends_count": 277,
+                                                                                "has_custom_timelines": true,
+                                                                                "is_translator": false,
+                                                                                "listed_count": 3095,
+                                                                                "location": "",
+                                                                                "media_count": 434,
+                                                                                "name": "Aptos",
+                                                                                "normal_followers_count": 586493,
+                                                                                "pinned_tweet_ids_str": [
+                                                                                    "1772734945942819005"
+                                                                                ],
+                                                                                "possibly_sensitive": false,
+                                                                                "profile_banner_url": "https://pbs.twimg.com/profile_banners/1491526425580474368/1709147351",
+                                                                                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1556801889282686976/tuHF27-8_normal.jpg",
+                                                                                "profile_interstitial_type": "",
+                                                                                "screen_name": "Aptos",
+                                                                                "statuses_count": 5882,
+                                                                                "translator_type": "none",
+                                                                                "url": "https://t.co/rmwJXBMf7x",
+                                                                                "verified": false,
+                                                                                "want_retweets": false,
+                                                                                "withheld_in_countries": []
+                                                                            },
+                                                                            "professional": {
+                                                                                "rest_id": "1653918001203412992",
+                                                                                "professional_type": "Business",
+                                                                                "category": [
+                                                                                    {
+                                                                                        "id": 713,
+                                                                                        "name": "Science & Technology",
+                                                                                        "icon_name": "IconBriefcaseStroke"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            "tipjar_settings": {}
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "unmention_data": {},
+                                                                "edit_control": {
+                                                                    "edit_tweet_ids": [
+                                                                        "1781870855464841312"
+                                                                    ],
+                                                                    "editable_until_msecs": "1713669692000",
+                                                                    "is_edit_eligible": true,
+                                                                    "edits_remaining": "5"
+                                                                },
+                                                                "is_translatable": false,
+                                                                "views": {
+                                                                    "count": "113152",
+                                                                    "state": "EnabledWithCount"
+                                                                },
+                                                                "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+                                                                "legacy": {
+                                                                    "bookmark_count": 12,
+                                                                    "bookmarked": false,
+                                                                    "created_at": "Sun Apr 21 02:21:32 +0000 2024",
+                                                                    "conversation_id_str": "1781870855464841312",
+                                                                    "display_text_range": [
+                                                                        0,
+                                                                        278
+                                                                    ],
+                                                                    "entities": {
+                                                                        "hashtags": [
+                                                                            {
+                                                                                "indices": [
+                                                                                    14,
+                                                                                    26
+                                                                                ],
+                                                                                "text": "AptosAscend"
+                                                                            }
+                                                                        ],
+                                                                        "media": [
+                                                                            {
+                                                                                "display_url": "pic.twitter.com/lDeDtHuj47",
+                                                                                "expanded_url": "https://twitter.com/Aptos/status/1781870855464841312/photo/1",
+                                                                                "id_str": "1781869883858599936",
+                                                                                "indices": [
+                                                                                    279,
+                                                                                    302
+                                                                                ],
+                                                                                "media_key": "3_1781869883858599936",
+                                                                                "media_url_https": "https://pbs.twimg.com/media/GLp5N_dbwAAluBG.jpg",
+                                                                                "type": "photo",
+                                                                                "url": "https://t.co/lDeDtHuj47",
+                                                                                "ext_media_availability": {
+                                                                                    "status": "Available"
+                                                                                },
+                                                                                "features": {
+                                                                                    "all": {
+                                                                                        "tags": [
+                                                                                            {
+                                                                                                "user_id": "163889317",
+                                                                                                "name": "Mo Shaikh \uD83C\uDF10 aptOS",
+                                                                                                "screen_name": "moshaikhs",
+                                                                                                "type": "user"
+                                                                                            },
+                                                                                            {
+                                                                                                "user_id": "2193616844",
+                                                                                                "name": "Ryan Selkis (d/acc) \uD83C\uDDFA\uD83C\uDDF8",
+                                                                                                "screen_name": "twobitidiot",
+                                                                                                "type": "user"
+                                                                                            },
+                                                                                            {
+                                                                                                "user_id": "1582127706560376832",
+                                                                                                "name": "Aptos Labs",
+                                                                                                "screen_name": "AptosLabs",
+                                                                                                "type": "user"
+                                                                                            },
+                                                                                            {
+                                                                                                "user_id": "412587524",
+                                                                                                "name": "Messari",
+                                                                                                "screen_name": "MessariCrypto",
+                                                                                                "type": "user"
+                                                                                            }
+                                                                                        ]
+                                                                                    },
+                                                                                    "large": {
+                                                                                        "faces": []
+                                                                                    },
+                                                                                    "medium": {
+                                                                                        "faces": []
+                                                                                    },
+                                                                                    "small": {
+                                                                                        "faces": []
+                                                                                    },
+                                                                                    "orig": {
+                                                                                        "faces": []
+                                                                                    }
+                                                                                },
+                                                                                "sizes": {
+                                                                                    "large": {
+                                                                                        "h": 1440,
+                                                                                        "w": 1080,
+                                                                                        "resize": "fit"
+                                                                                    },
+                                                                                    "medium": {
+                                                                                        "h": 1200,
+                                                                                        "w": 900,
+                                                                                        "resize": "fit"
+                                                                                    },
+                                                                                    "small": {
+                                                                                        "h": 680,
+                                                                                        "w": 510,
+                                                                                        "resize": "fit"
+                                                                                    },
+                                                                                    "thumb": {
+                                                                                        "h": 150,
+                                                                                        "w": 150,
+                                                                                        "resize": "crop"
+                                                                                    }
+                                                                                },
+                                                                                "original_info": {
+                                                                                    "height": 1440,
+                                                                                    "width": 1080,
+                                                                                    "focus_rects": [
+                                                                                        {
+                                                                                            "x": 0,
+                                                                                            "y": 454,
+                                                                                            "w": 1080,
+                                                                                            "h": 605
+                                                                                        },
+                                                                                        {
+                                                                                            "x": 0,
+                                                                                            "y": 216,
+                                                                                            "w": 1080,
+                                                                                            "h": 1080
+                                                                                        },
+                                                                                        {
+                                                                                            "x": 0,
+                                                                                            "y": 141,
+                                                                                            "w": 1080,
+                                                                                            "h": 1231
+                                                                                        },
+                                                                                        {
+                                                                                            "x": 0,
+                                                                                            "y": 0,
+                                                                                            "w": 720,
+                                                                                            "h": 1440
+                                                                                        },
+                                                                                        {
+                                                                                            "x": 0,
+                                                                                            "y": 0,
+                                                                                            "w": 1080,
+                                                                                            "h": 1440
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                "allow_download_status": {
+                                                                                    "allow_download": true
+                                                                                },
+                                                                                "media_results": {
+                                                                                    "result": {
+                                                                                        "media_key": "3_1781869883858599936"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        ],
+                                                                        "symbols": [],
+                                                                        "timestamps": [],
+                                                                        "urls": [
+                                                                            {
+                                                                                "display_url": "twitter.com/i/spaces/1PlJQ…",
+                                                                                "expanded_url": "https://twitter.com/i/spaces/1PlJQDXpeRkGE",
+                                                                                "url": "https://t.co/RvbYTC4P2T",
+                                                                                "indices": [
+                                                                                    255,
+                                                                                    278
+                                                                                ]
+                                                                            }
+                                                                        ],
+                                                                        "user_mentions": [
+                                                                            {
+                                                                                "id_str": "163889317",
+                                                                                "name": "Mo Shaikh \uD83C\uDF10 aptOS",
+                                                                                "screen_name": "moshaikhs",
+                                                                                "indices": [
+                                                                                    76,
+                                                                                    86
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "id_str": "1582127706560376832",
+                                                                                "name": "Aptos Labs",
+                                                                                "screen_name": "AptosLabs",
+                                                                                "indices": [
+                                                                                    88,
+                                                                                    98
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "id_str": "2193616844",
+                                                                                "name": "Ryan Selkis (d/acc) \uD83C\uDDFA\uD83C\uDDF8",
+                                                                                "screen_name": "twobitidiot",
+                                                                                "indices": [
+                                                                                    104,
+                                                                                    116
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "id_str": "412587524",
+                                                                                "name": "Messari",
+                                                                                "screen_name": "MessariCrypto",
+                                                                                "indices": [
+                                                                                    118,
+                                                                                    132
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "extended_entities": {
+                                                                        "media": [
+                                                                            {
+                                                                                "display_url": "pic.twitter.com/lDeDtHuj47",
+                                                                                "expanded_url": "https://twitter.com/Aptos/status/1781870855464841312/photo/1",
+                                                                                "id_str": "1781869883858599936",
+                                                                                "indices": [
+                                                                                    279,
+                                                                                    302
+                                                                                ],
+                                                                                "media_key": "3_1781869883858599936",
+                                                                                "media_url_https": "https://pbs.twimg.com/media/GLp5N_dbwAAluBG.jpg",
+                                                                                "type": "photo",
+                                                                                "url": "https://t.co/lDeDtHuj47",
+                                                                                "ext_media_availability": {
+                                                                                    "status": "Available"
+                                                                                },
+                                                                                "features": {
+                                                                                    "all": {
+                                                                                        "tags": [
+                                                                                            {
+                                                                                                "user_id": "163889317",
+                                                                                                "name": "Mo Shaikh \uD83C\uDF10 aptOS",
+                                                                                                "screen_name": "moshaikhs",
+                                                                                                "type": "user"
+                                                                                            },
+                                                                                            {
+                                                                                                "user_id": "2193616844",
+                                                                                                "name": "Ryan Selkis (d/acc) \uD83C\uDDFA\uD83C\uDDF8",
+                                                                                                "screen_name": "twobitidiot",
+                                                                                                "type": "user"
+                                                                                            },
+                                                                                            {
+                                                                                                "user_id": "1582127706560376832",
+                                                                                                "name": "Aptos Labs",
+                                                                                                "screen_name": "AptosLabs",
+                                                                                                "type": "user"
+                                                                                            },
+                                                                                            {
+                                                                                                "user_id": "412587524",
+                                                                                                "name": "Messari",
+                                                                                                "screen_name": "MessariCrypto",
+                                                                                                "type": "user"
+                                                                                            }
+                                                                                        ]
+                                                                                    },
+                                                                                    "large": {
+                                                                                        "faces": []
+                                                                                    },
+                                                                                    "medium": {
+                                                                                        "faces": []
+                                                                                    },
+                                                                                    "small": {
+                                                                                        "faces": []
+                                                                                    },
+                                                                                    "orig": {
+                                                                                        "faces": []
+                                                                                    }
+                                                                                },
+                                                                                "sizes": {
+                                                                                    "large": {
+                                                                                        "h": 1440,
+                                                                                        "w": 1080,
+                                                                                        "resize": "fit"
+                                                                                    },
+                                                                                    "medium": {
+                                                                                        "h": 1200,
+                                                                                        "w": 900,
+                                                                                        "resize": "fit"
+                                                                                    },
+                                                                                    "small": {
+                                                                                        "h": 680,
+                                                                                        "w": 510,
+                                                                                        "resize": "fit"
+                                                                                    },
+                                                                                    "thumb": {
+                                                                                        "h": 150,
+                                                                                        "w": 150,
+                                                                                        "resize": "crop"
+                                                                                    }
+                                                                                },
+                                                                                "original_info": {
+                                                                                    "height": 1440,
+                                                                                    "width": 1080,
+                                                                                    "focus_rects": [
+                                                                                        {
+                                                                                            "x": 0,
+                                                                                            "y": 454,
+                                                                                            "w": 1080,
+                                                                                            "h": 605
+                                                                                        },
+                                                                                        {
+                                                                                            "x": 0,
+                                                                                            "y": 216,
+                                                                                            "w": 1080,
+                                                                                            "h": 1080
+                                                                                        },
+                                                                                        {
+                                                                                            "x": 0,
+                                                                                            "y": 141,
+                                                                                            "w": 1080,
+                                                                                            "h": 1231
+                                                                                        },
+                                                                                        {
+                                                                                            "x": 0,
+                                                                                            "y": 0,
+                                                                                            "w": 720,
+                                                                                            "h": 1440
+                                                                                        },
+                                                                                        {
+                                                                                            "x": 0,
+                                                                                            "y": 0,
+                                                                                            "w": 1080,
+                                                                                            "h": 1440
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                "allow_download_status": {
+                                                                                    "allow_download": true
+                                                                                },
+                                                                                "media_results": {
+                                                                                    "result": {
+                                                                                        "media_key": "3_1781869883858599936"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "favorite_count": 408,
+                                                                    "favorited": false,
+                                                                    "full_text": "The launch of #AptosAscend has all eyes on the Aptos DeFi ecosystem \uD83D\uDC40\n\nJoin @MoShaikhs (@AptosLabs) and @twobitidiot (@MessariCrypto) for a deep dive into the state of DeFi, and hear how Aptos is blazing a path forward for institutions and users alike ⤵️\nhttps://t.co/RvbYTC4P2T https://t.co/lDeDtHuj47",
+                                                                    "is_quote_status": false,
+                                                                    "lang": "en",
+                                                                    "possibly_sensitive": false,
+                                                                    "possibly_sensitive_editable": true,
+                                                                    "quote_count": 11,
+                                                                    "reply_count": 27,
+                                                                    "retweet_count": 93,
+                                                                    "retweeted": false,
+                                                                    "user_id_str": "1491526425580474368",
+                                                                    "id_str": "1781870855464841312"
+                                                                }
+                                                            }
+                                                        },
+                                                        "legacy": {
+                                                            "bookmark_count": 4,
+                                                            "bookmarked": false,
+                                                            "created_at": "Mon Apr 22 23:48:14 +0000 2024",
+                                                            "conversation_id_str": "1782557053753626876",
+                                                            "display_text_range": [
+                                                                0,
+                                                                93
+                                                            ],
+                                                            "entities": {
+                                                                "hashtags": [],
+                                                                "symbols": [],
+                                                                "timestamps": [],
+                                                                "urls": [
+                                                                    {
+                                                                        "display_url": "twitter.com/i/spaces/1PlJQ…",
+                                                                        "expanded_url": "https://twitter.com/i/spaces/1PlJQDXpeRkGE/",
+                                                                        "url": "https://t.co/0WJACgCEp9",
+                                                                        "indices": [
+                                                                            70,
+                                                                            93
+                                                                        ]
+                                                                    }
+                                                                ],
+                                                                "user_mentions": []
+                                                            },
+                                                            "favorite_count": 121,
+                                                            "favorited": false,
+                                                            "full_text": "ICYMI, this is one Aptos ecosystem deep dive you don't want to miss.\n\nhttps://t.co/0WJACgCEp9",
+                                                            "is_quote_status": true,
+                                                            "lang": "en",
+                                                            "possibly_sensitive": false,
+                                                            "possibly_sensitive_editable": true,
+                                                            "quote_count": 0,
+                                                            "quoted_status_id_str": "1781870855464841312",
+                                                            "quoted_status_permalink": {
+                                                                "url": "https://t.co/Zsrw49epXg",
+                                                                "expanded": "https://twitter.com/Aptos/status/1781870855464841312",
+                                                                "display": "x.com/Aptos/status/1…"
+                                                            },
+                                                            "reply_count": 8,
+                                                            "retweet_count": 13,
+                                                            "retweeted": false,
+                                                            "user_id_str": "1491526425580474368",
+                                                            "id_str": "1782557053753626876"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "quick_promote_eligibility": {
+                                                "eligibility": "IneligibleNotProfessional"
+                                            }
+                                        }
+                                    },
+                                    "tweetDisplayType": "Tweet",
+                                    "hasModeratedReplies": false,
+                                    "forwardPivot": {
+                                        "text": {
+                                            "text": "See Similar Posts",
+                                            "entities": []
+                                        },
+                                        "landingUrl": {
+                                            "url": "https://x.com/Aptos/status/1783355050984866206/similar",
+                                            "urlType": "ExternalUrl"
+                                        },
+                                        "displayType": "ShowSimilarPosts"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "entryId": "tweetdetailrelatedtweets-4301931071865599266",
+                            "sortIndex": "1",
+                            "content": {
+                                "entryType": "TimelineTimelineModule",
+                                "__typename": "TimelineTimelineModule",
+                                "items": [],
+                                "displayType": "Vertical",
+                                "header": {
+                                    "displayType": "Classic",
+                                    "text": "Discover more",
+                                    "socialContext": {
+                                        "type": "TimelineGeneralContext",
+                                        "contextType": "TextOnly",
+                                        "text": "Sourced from across X"
+                                    },
+                                    "sticky": true
+                                },
+                                "clientEventInfo": {
+                                    "component": "related_tweet",
+                                    "details": {
+                                        "conversationDetails": {
+                                            "conversationSection": "RelatedTweet"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "TimelineTerminateTimeline",
+                    "direction": "Top"
+                }
+            ]
+        }
+    }
+}

@@ -186,7 +186,7 @@ class Tweet(JSONTrait):
     sourceUrl: str | None = None
     sourceLabel: str | None = None
     media: Optional["Media"] = None
-    card: Optional["SummaryCard"] | Optional["PollCard"] = None
+    card: Optional["SummaryCard"] | Optional["PollCard"] | Optional["AudioSpaceCard"] = None
     _type: str = "snscrape.modules.twitter.Tweet"
 
     # todo:
@@ -365,6 +365,10 @@ class SummaryCard(Card):
     video: MediaVideo | None = None
     _type: str = "summary"
 
+@dataclass
+class AudioSpaceCard(Card):
+    url: str
+    _type: str = "audiospace"
 
 @dataclass
 class PollOption(JSONTrait):
@@ -480,6 +484,14 @@ def _parse_card(obj: dict, url: str):
             photo=photo,
             video=video,
         )
+    
+    # "name": "3691233323:audiospace",
+    # "url": "https://t.co/0WJACgCEp9",
+    # "user_refs_results": []
+    if name == "audiospace":
+        val = _parse_card_prepare_values(obj)
+        url = _parse_card_get_str(val, "url")
+        return AudioSpaceCard(url=url)
 
     if re.match(r"poll\d+choice_text_only", name):
         val = _parse_card_prepare_values(obj)
@@ -500,7 +512,6 @@ def _parse_card(obj: dict, url: str):
         return PollCard(options=options, finished=finished)
 
     logger.warning(f"Unknown card type '{name}' on {url}")
-    # print(json.dumps(obj["card"]["legacy"], indent=2))
 
 
 # internal helpers

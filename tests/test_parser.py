@@ -4,7 +4,7 @@ from typing import Callable
 
 from twscrape import API, gather
 from twscrape.logger import set_log_level
-from twscrape.models import PollCard, SummaryCard, Tweet, User, UserRef, parse_tweet
+from twscrape.models import PollCard, SummaryCard, AudioSpaceCard, Tweet, User, UserRef, parse_tweet
 
 BASE_DIR = os.path.dirname(__file__)
 DATA_DIR = os.path.join(BASE_DIR, "mocked-data")
@@ -413,6 +413,16 @@ async def test_issue_56():
     assert len(set([x.tcourl for x in doc.links])) == len(doc.links)
     assert len(doc.links) == 5
 
+async def test_audio_space():
+    raw = fake_rep("raw_tweet_audio_space").json()
+    doc = parse_tweet(raw, 1783355050984866206)
+    assert doc is not None
+    assert doc.card is not None
+    assert isinstance(doc.card, AudioSpaceCard)
+    assert doc.card._type == "audio_space"
+    assert doc.card.title is not None
+    assert doc.card.description is not None
+    assert doc.card.url is not None
 
 async def test_issue_72():
     # Check SummaryCard

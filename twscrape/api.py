@@ -29,7 +29,6 @@ OP_LikeTweet = "lI07N6Otwv1PhnEgXILM7A/FavoriteTweet"
 GQL_QUERY_ID_CREATE_TWEET = "zIdRTsSqcD6R5uMtm_N0pw"
 GQL_QUERY_ID_LIKE_TWEET = "lI07N6Otwv1PhnEgXILM7A"
 
-
 GQL_URL = "https://twitter.com/i/api/graphql"
 GQL_FEATURES = {  # search values here (view source) https://twitter.com/
     "articles_preview_enabled": False,
@@ -480,7 +479,11 @@ class API:
     async def create_tweet_raw(self, text: str, kv=None):
         op = OP_CreateTweet
         kv = self.construct_tweet_text_kv(text, None)
-        return await self._gql_post(op, kv, query_id=GQL_QUERY_ID_CREATE_TWEET)
+        ft = {
+            "articles_preview_enabled": True,   
+            "tweet_with_visibility_results_prefer_gql_media_interstitial_enabled": True,
+        }
+        return await self._gql_post(op, kv, ft, query_id=GQL_QUERY_ID_CREATE_TWEET)
     
     async def create_reply_raw(self, text: str, reply_to: str, kv=None):
         op = OP_CreateTweet
@@ -502,4 +505,4 @@ class API:
     async def like_tweet(self, tweet_id: str):
         op = OP_LikeTweet
         kv = {"tweet_id": tweet_id}
-        return await self._gql_post(op, kv)
+        return await self._gql_post(op, kv, include_default_gql_ft=False, query_id=GQL_QUERY_ID_LIKE_TWEET)

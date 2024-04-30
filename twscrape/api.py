@@ -113,7 +113,12 @@ class API:
                 params["features"] = ft
             if query_id:
                 params["queryId"] = query_id
-            return await client.post(f"{GQL_URL}/{op}", json=params)
+
+            rep = await client.post(f"{GQL_URL}/{op}", params=encode_params(params))
+            if rep is None:
+                return None
+            
+            return rep.json()
 
     async def _gql_items(
         self, op: str, kv: dict, ft: dict | None = None, limit=-1, cursor_type="Bottom"

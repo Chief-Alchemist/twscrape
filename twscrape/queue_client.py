@@ -201,6 +201,9 @@ class QueueClient:
 
     async def get(self, url: str, params: ReqParams = None):
         return await self.req("GET", url, params=params)
+    
+    async def post(self, url: str, params: ReqParams = None):
+        return await self.req("POST", url, params=params)
 
     async def req(self, method: str, url: str, params: ReqParams = None) -> Response | None:
         unknown_retry, connection_retry = 0, 0

@@ -23,6 +23,11 @@ OP_Likes = "RaAkBb4XXis-atDL3rV-xw/Likes"
 OP_BlueVerifiedFollowers = "AXsZSOWx3FCvneEIzxDj6A/BlueVerifiedFollowers"
 OP_UserCreatorSubscriptions = "NHT8e7FjnCS3TP0QfP_OUQ/UserCreatorSubscriptions"
 OP_UserMedia = "aQQLnkexAl5z9ec_UgbEIA/UserMedia"
+OP_CreateTweet = "zIdRTsSqcD6R5uMtm_N0pw/CreateTweet"
+OP_LikeTweet = "lI07N6Otwv1PhnEgXILM7A/FavoriteTweet"
+
+GQL_QUERY_ID_CREATE_TWEET = "zIdRTsSqcD6R5uMtm_N0pw"
+GQL_QUERY_ID_LIKE_TWEET = "lI07N6Otwv1PhnEgXILM7A"
 
 
 GQL_URL = "https://twitter.com/i/api/graphql"
@@ -97,6 +102,18 @@ class API:
         return None
 
     # gql helpers
+
+    async def _gql_post(self, op: str, kv: dict, ft: dict | None = None, include_default_gql_ft=True, query_id=None):
+        ft = ft or {}
+        async with QueueClient(self.pool, op.split("/")[-1], self.debug, proxy=self.proxy) as client:
+            params = {"variables": {**kv}}
+            if include_default_gql_ft:
+                params["features"] = {**GQL_FEATURES, **ft}
+            else:
+                params["features"] = ft
+            if query_id:
+                params["queryId"] = query_id
+            return await client.post(f"{GQL_URL}/{op}", json=params)
 
     async def _gql_items(
         self, op: str, kv: dict, ft: dict | None = None, limit=-1, cursor_type="Bottom"
@@ -453,3 +470,31 @@ class API:
             async for rep in gen:
                 for x in parse_tweets(rep.json(), limit):
                     yield x
+
+    # create_tweet
+    async def create_tweet_raw(self, text: str, kv=None):
+        op = OP_CreateTweet
+        kv = self.construct_tweet_text_kv(text, None)
+        return await self._gql_post(op, kv, query_id=GQL_QUERY_ID_CREATE_TWEET)
+    
+    async def create_reply_raw(self, text: str, reply_to: str, kv=None):
+        op = OP_CreateTweet
+        kv = self.construct_tweet_text_kv(text, reply_to)
+        return await self._gql_post(op, kv, query_id=GQL_QUERY_ID_CREATE_TWEET)
+    
+
+    def construct_tweet_text_kv(self, text: str, reply_to: str | None = None):
+        kv = {
+            "tweet_text": text,
+            "dark_request": False,
+            "media": {"media_entities": [], "possibly_sensitive": False},
+            "semantic_annotation_ids": [],
+        }
+        if reply_to:
+            kv["reply"] = {"in_reply_to_tweet_id": reply_to, "exclude_reply_user_ids": []}
+        return kv
+    
+    async def like_tweet(self, tweet_id: str):
+        op = OP_LikeTweet
+        kv = {"tweet_id": tweet_id}
+        return await self._gql_post(op, kv)

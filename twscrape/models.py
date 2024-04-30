@@ -186,7 +186,7 @@ class Tweet(JSONTrait):
     sourceUrl: str | None = None
     sourceLabel: str | None = None
     media: Optional["Media"] = None
-    card: Optional["SummaryCard"] | Optional["PollCard"] | Optional["AudioSpaceCard"] = None
+    card: Optional["SummaryCard"] | Optional["PollCard"] | Optional["AudioSpaceCard"] | Optional["BroadcastCard"] = None
     _type: str = "snscrape.modules.twitter.Tweet"
 
     # todo:
@@ -371,6 +371,11 @@ class AudioSpaceCard(Card):
     _type: str = "audiospace"
 
 @dataclass
+class BroadcastCard(Card):
+    url: str
+    _type: str = "broadcast"
+
+@dataclass
 class PollOption(JSONTrait):
     label: str
     votesCount: int
@@ -484,6 +489,11 @@ def _parse_card(obj: dict, url: str):
             photo=photo,
             video=video,
         )
+    
+    if re.match(r"\d+:broadcast", name):
+        val = _parse_card_prepare_values(obj)
+        url = _parse_card_get_str(val, "url")
+        return BroadcastCard(url=url)
     
     if re.match(r"\d+:audiospace", name):
         val = _parse_card_prepare_values(obj)

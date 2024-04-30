@@ -4,7 +4,7 @@ from typing import Callable
 
 from twscrape import API, gather
 from twscrape.logger import set_log_level
-from twscrape.models import PollCard, SummaryCard, AudioSpaceCard, Tweet, User, UserRef, parse_tweet
+from twscrape.models import PollCard, SummaryCard, AudioSpaceCard, BroadcastCard, Tweet, User, UserRef, parse_tweet
 
 BASE_DIR = os.path.dirname(__file__)
 DATA_DIR = os.path.join(BASE_DIR, "mocked-data")
@@ -419,7 +419,18 @@ async def test_audio_space():
     assert doc is not None
     assert doc.card is not None
     assert isinstance(doc.card, AudioSpaceCard)
-    assert doc.card._type == "audio_space"
+    assert doc.card._type == "audiospace"
+    assert doc.card.title is not None
+    assert doc.card.description is not None
+    assert doc.card.url is not None
+
+async def test_broadcast():
+    raw = fake_rep("raw_tweet_broadcast").json()
+    doc = parse_tweet(raw, 1784953939433316752)
+    assert doc is not None
+    assert doc.card is not None
+    assert isinstance(doc.card, BroadcastCard)
+    assert doc.card._type == "broadcast"
     assert doc.card.title is not None
     assert doc.card.description is not None
     assert doc.card.url is not None

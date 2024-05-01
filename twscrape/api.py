@@ -104,7 +104,8 @@ class API:
 
     async def _gql_post(self, op: str, kv: dict, ft: dict | None = None, include_default_gql_ft=True, query_id=None):
         ft = ft or {}
-        async with QueueClient(self.pool, op.split("/")[-1], self.debug, proxy=self.proxy) as client:
+        queue = op.split("/")[-1]
+        async with QueueClient(self.pool, queue, self.debug, proxy=self.proxy) as client:
             params = {"variables": {**kv}}
             if include_default_gql_ft:
                 params["features"] = {**GQL_FEATURES, **ft}
@@ -478,7 +479,7 @@ class API:
     # create_tweet
     async def create_tweet_raw(self, text: str, kv=None):
         op = OP_CreateTweet
-        kv = self.construct_tweet_text_kv(text, None)
+        kv = self.construct_tweet_text_kv(text=text, reply_to=None, kv=kv)
         ft = {
             "articles_preview_enabled": True,   
             "tweet_with_visibility_results_prefer_gql_media_interstitial_enabled": True,
@@ -487,11 +488,11 @@ class API:
     
     async def create_reply_raw(self, text: str, reply_to: str, kv=None):
         op = OP_CreateTweet
-        kv = self.construct_tweet_text_kv(text, reply_to)
+        kv = self.construct_tweet_text_kv(text=text, reply_to=reply_to, kv=kv)
         return await self._gql_post(op, kv, query_id=GQL_QUERY_ID_CREATE_TWEET)
     
 
-    def construct_tweet_text_kv(self, text: str, reply_to: str | None = None):
+    def construct_tweet_text_kv(self, text: str, reply_to: str | None = None, kv=None):
         kv = {
             "tweet_text": text,
             "dark_request": False,
@@ -502,7 +503,7 @@ class API:
             kv["reply"] = {"in_reply_to_tweet_id": reply_to, "exclude_reply_user_ids": []}
         return kv
     
-    async def like_tweet(self, tweet_id: str):
+    async def like_tweet(self, tweet_id: str, kv=None):
         op = OP_LikeTweet
-        kv = {"tweet_id": tweet_id}
+        kv = {"tweet_id": tweet_id, **(kv or {})}
         return await self._gql_post(op, kv, include_default_gql_ft=False, query_id=GQL_QUERY_ID_LIKE_TWEET)

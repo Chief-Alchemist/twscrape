@@ -25,6 +25,7 @@ OP_UserCreatorSubscriptions = "NHT8e7FjnCS3TP0QfP_OUQ/UserCreatorSubscriptions"
 OP_UserMedia = "aQQLnkexAl5z9ec_UgbEIA/UserMedia"
 OP_CreateTweet = "zIdRTsSqcD6R5uMtm_N0pw/CreateTweet"
 OP_LikeTweet = "lI07N6Otwv1PhnEgXILM7A/FavoriteTweet"
+OP_HomeTimeline = "q1x0puFIVMzsbx2Yoh-usA/HomeTimeline"
 
 GQL_QUERY_ID_CREATE_TWEET = "zIdRTsSqcD6R5uMtm_N0pw"
 GQL_QUERY_ID_LIKE_TWEET = "lI07N6Otwv1PhnEgXILM7A"
@@ -157,6 +158,28 @@ class API:
         async with QueueClient(self.pool, queue, self.debug, proxy=self.proxy) as client:
             params = {"variables": {**kv}, "features": {**GQL_FEATURES, **ft}}
             return await client.get(f"{GQL_URL}/{op}", params=encode_params(params))
+        
+    # home_timeline
+
+    async def home_timeline_raw(self, limit=-1, kv=None):
+        op = OP_HomeTimeline
+        kv = {
+            "count": 20,
+            "includePromotedContent": False,
+            "latestControlAvailable": True,
+            "requestContext": "launch",
+            "withCommunity": True,
+            **(kv or {}),
+        }
+        async with aclosing(self._gql_items(op, kv, limit=limit)) as gen:
+            async for x in gen:
+                yield x
+
+    async def home_timeline(self, limit=-1, kv=None):
+        async with aclosing(self.home_timeline_raw(limit=limit, kv=kv)) as gen:
+            async for rep in gen:
+                for x in parse_tweets(rep.json(), limit):
+                    yield x
 
     # search
 

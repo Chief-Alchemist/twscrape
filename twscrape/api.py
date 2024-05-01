@@ -106,15 +106,15 @@ class API:
         ft = ft or {}
         queue = op.split("/")[-1]
         async with QueueClient(self.pool, queue, self.debug, proxy=self.proxy) as client:
-            params = {"variables": {**kv}}
+            data = {"variables": {**kv}}
             if include_default_gql_ft:
-                params["features"] = {**GQL_FEATURES, **ft}
+                data["features"] = {**GQL_FEATURES, **ft}
             else:
-                params["features"] = ft
+                data["features"] = ft
             if query_id:
-                params["queryId"] = query_id
+                data["queryId"] = query_id
 
-            rep = await client.post(f"{GQL_URL}/{op}", params=encode_params(params))
+            rep = await client.post(f"{GQL_URL}/{op}", data=data)
             if rep is None:
                 return None
             

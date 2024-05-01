@@ -202,10 +202,10 @@ class QueueClient:
     async def get(self, url: str, params: ReqParams = None):
         return await self.req("GET", url, params=params)
     
-    async def post(self, url: str, params: ReqParams = None):
-        return await self.req("POST", url, params=params)
+    async def post(self, url: str, data: ReqParams = None):
+        return await self.req("POST", url, data=data)
 
-    async def req(self, method: str, url: str, params: ReqParams = None) -> Response | None:
+    async def req(self, method: str, url: str, params: ReqParams = None, data: ReqParams = None):
         unknown_retry, connection_retry = 0, 0
 
         while True:
@@ -214,7 +214,13 @@ class QueueClient:
                 return None
 
             try:
-                rep = await ctx.clt.request(method, url, params=params)
+                if method == "GET":
+                    rep = await ctx.clt.get(url, params=params)
+                elif method == "POST":
+                    data = json.dumps(params) if params else None
+                    rep = await ctx.clt.post(url, data=data)
+                else:
+                    raise ValueError(f"Unknown method: {method}")
                 setattr(rep, "__username", ctx.acc.username)
                 await self._check_rep(rep)
 

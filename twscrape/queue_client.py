@@ -217,7 +217,7 @@ class QueueClient:
                 if method == "GET":
                     rep = await ctx.clt.get(url, params=params)
                 elif method == "POST":
-                    data = json.dumps(params) if params else None
+                    data = json.dumps(data) if data else None
                     rep = await ctx.clt.post(url, data=data)
                 else:
                     raise ValueError(f"Unknown method: {method}")
